@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roseane Mendonça Estética Avançada</title>
+<meta name="theme-color" content="#F8F5F0">
+<meta name="description" content="Roseane Mendonça, estética avançada em Três Pontas, MG. Harmonização facial, estética corporal, rejuvenescimento e tricologia com avaliação individualizada.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roseane Mendonça | Estética Avançada em Três Pontas, MG">
+<meta property="og:description" content="Beleza que respeita a sua essência. Cuidado personalizado, ciência e sensibilidade.">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: editorial, assimétrico. Foto em sangria à direita no hero, linhas alternadas nos tratamentos, pausa escura no meio. */
+:root{
+  --ivory:#F8F5F0; --porcelain:#FFFFFF; --champagne:#E8DED2; --nude:#D6BEB2;
+  --taupe:#8A776D; --brown:#382D2A; --graphite:#292725; --gold:#B39A70;
+  --ink:#382D2A; --ink-soft:#5f4f49; --line:rgba(56,45,42,.16);
+  --serif:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --sans:'Manrope','DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --gutter:clamp(1.25rem,5vw,4.5rem);
+  --ease:cubic-bezier(.22,.8,.24,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:100%;max-width:78rem;margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--taupe)}
+.eyebrow.gold{color:var(--gold)}
+.rule{display:block;width:3.5rem;height:1px;background:var(--gold);border:0;margin:0}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:34rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:3.2rem;padding:.85rem 1.8rem;font:500 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--brown);background:var(--brown);color:var(--ivory);cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),transform .35s var(--ease)}
+.btn span.arr{display:inline-block;transition:transform .35s var(--ease)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--graphite)}
+.btn:hover span.arr{transform:translateX(4px)}
+.btn.ghost{background:transparent;color:var(--brown)}
+.btn.ghost:hover{background:var(--brown);border-color:var(--brown);color:var(--ivory)}
+.btn.light{background:var(--ivory);color:var(--brown);border-color:var(--ivory)}
+.btn.light:hover{background:var(--gold);border-color:var(--gold);color:var(--graphite)}
+.btn.ghost-light{background:transparent;color:var(--ivory);border-color:rgba(248,245,240,.5)}
+.btn.ghost-light:hover{background:var(--ivory);color:var(--brown);border-color:var(--ivory)}
+.link{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;background:none;border:0;padding:.4rem 0;cursor:pointer;color:var(--brown);border-bottom:1px solid var(--gold);font-family:var(--sans)}
+.link:hover{color:var(--taupe)}
+
+/* slots de fotografia */
+.ph{position:relative;overflow:hidden;background:linear-gradient(155deg,var(--champagne),var(--nude) 130%)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.ph.empty::after{content:attr(data-label);position:absolute;left:1.1rem;bottom:1rem;right:1.1rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+.ph.empty::before{content:"";position:absolute;inset:1rem;border:1px solid rgba(179,154,112,.55)}
+.zoom:hover .ph img{transform:scale(1.045)}
+.ph.art svg{transition:transform 1.6s var(--ease)}
+.zoom:hover .ph.art svg{transform:scale(1.04)}
+.ph.art::after{content:attr(data-cap);position:absolute;left:1.1rem;bottom:1rem;right:1.1rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+
+/* cabeçalho */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s var(--ease),border-color .4s var(--ease);border-bottom:1px solid transparent}
+.site-header.solid{background:rgba(248,245,240,.94);border-color:var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:4.5rem}
+.sig{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.sig b{font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase}
+.sig small{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-top:.4rem;font-weight:500}
+.nav{display:flex;align-items:center;gap:2.4rem}
+.nav a.nl{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:500;position:relative;padding:.4rem 0}
+.nav a.nl::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a.nl:hover::after{transform:scaleX(1)}
+.nav .btn{min-height:2.7rem;padding:.7rem 1.3rem;font-size:.7rem}
+.burger{display:none;width:3rem;height:3rem;border:0;background:none;cursor:pointer;position:relative;color:var(--brown)}
+.burger i{position:absolute;left:.75rem;right:.75rem;height:1px;background:currentColor;transition:transform .4s var(--ease),top .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:1.1rem}.burger i:nth-child(2){top:1.5rem}.burger i:nth-child(3){top:1.9rem}
+.menu-open .burger i:nth-child(1){top:1.5rem;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){top:1.5rem;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--ivory);padding:calc(6rem + env(safe-area-inset-top,0px)) var(--gutter) calc(2rem + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:.2rem;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .6s var(--ease),visibility 0s .6s;overflow-y:auto}
+.menu-open .mobile-menu{clip-path:inset(0);visibility:visible;transition:clip-path .6s var(--ease)}
+.mobile-menu a.ml{font-family:var(--serif);font-size:2.3rem;text-decoration:none;padding:.55rem 0;border-bottom:1px solid var(--line);min-height:3.5rem}
+.mobile-menu .btn{margin-top:1.5rem}
+
+/* hero */
+.hero{padding-top:4.5rem;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:40rem;align-items:stretch;opacity:0;animation:fadein .9s ease .05s forwards}
+.hero-text{padding:clamp(2.5rem,7vw,6rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,6vw,5rem) var(--gutter);display:flex;flex-direction:column;justify-content:center;gap:1.7rem}
+.hero h1{font-size:clamp(2.9rem,5.6vw,5.4rem);font-weight:300;line-height:.98;opacity:0;transform:translateY(14px);animation:rise 1s var(--ease) .25s forwards}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--taupe)}
+.hero .lead{opacity:0;transform:translateY(12px);animation:rise 1s var(--ease) .55s forwards}
+.hero .eyebrow{opacity:0;animation:fadein .9s ease .15s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;opacity:0;transform:translateY(10px);animation:rise .9s var(--ease) .8s forwards}
+.hero-sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--taupe);opacity:0;animation:fadein 1s ease 1.1s forwards}
+.hero-photo{min-height:34rem;position:relative}
+.hero-photo .ph{position:absolute;inset:0;clip-path:inset(0 0 0 100%);animation:reveal 1.3s var(--ease) .3s forwards}
+.scroll-ind{position:absolute;left:var(--gutter);bottom:1.6rem;display:flex;align-items:center;gap:.8rem;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe);text-decoration:none}
+.scroll-ind i{display:block;width:1px;height:2.6rem;background:linear-gradient(var(--gold),transparent);transform-origin:top;animation:drip 2.4s ease-in-out infinite}
+@keyframes fadein{to{opacity:1}}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes reveal{to{clip-path:inset(0)}}
+@keyframes drip{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.hero-wrap{position:relative}
+
+section{position:relative}
+.sec{padding-block:clamp(4.5rem,10vw,9rem)}
+
+/* filosofia */
+.philo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,7vw,7rem);align-items:center}
+.philo .ph{aspect-ratio:4/5;max-width:100%}
+.philo .ph-b{aspect-ratio:1/1;width:56%;margin:-4rem 0 0 auto;border:.6rem solid var(--ivory);position:relative}
+.philo h2{font-size:clamp(2.2rem,4.3vw,3.9rem);font-weight:300}
+.philo .body{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.signature{font-family:var(--serif);font-style:italic;font-size:2.1rem;color:var(--taupe);font-weight:400;margin-top:.5rem}
+
+/* tratamentos */
+.treat-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:end;margin-bottom:clamp(3rem,6vw,5.5rem)}
+.treat-head h2{font-size:clamp(2.4rem,5vw,4.6rem);font-weight:300}
+.treat{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,6vw,6rem);align-items:center;padding-block:clamp(2rem,4vw,3.5rem);border-top:1px solid var(--line)}
+.treat:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.treat:nth-of-type(even) .t-img{order:2}
+.t-img .ph{aspect-ratio:16/11}
+.treat:nth-of-type(even) .t-img .ph{aspect-ratio:4/3.4}
+.t-num{font-family:var(--serif);font-size:clamp(4rem,8vw,7rem);line-height:.8;color:var(--champagne);font-weight:300;display:block;margin-bottom:1rem;transition:color .5s,transform .6s var(--ease)}
+.treat:hover .t-num{color:var(--gold);transform:translateX(.5rem)}
+.t-body h3{font-size:clamp(2rem,3.4vw,3rem);font-weight:400;margin-bottom:1rem}
+.t-body p{color:var(--ink-soft);max-width:28rem}
+.t-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.t-more>div{overflow:hidden}
+.t-more.open{grid-template-rows:1fr}
+.t-more p{padding-top:1rem;font-size:.95rem;border-left:1px solid var(--gold);padding-left:1rem;margin-top:1rem}
+.t-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;margin-top:1.8rem}
+.disclaimer{font-size:.8rem;color:var(--taupe);margin-top:2.5rem;max-width:40rem}
+
+/* impacto */
+.impact{background:var(--brown);color:var(--ivory);overflow:hidden;text-align:left}
+.impact .ph{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,#5a4741 0,var(--brown) 60%)}
+.impact .ph.empty::before,.impact .ph.empty::after{display:none}
+.impact .ph img{opacity:.38}
+.impact .wrap{position:relative;padding-block:clamp(6rem,14vw,12rem)}
+.impact h2{font-size:clamp(2.6rem,6.4vw,6rem);font-weight:300;max-width:16ch;line-height:1}
+.impact h2 em{font-style:italic;color:var(--nude)}
+.impact p{max-width:30rem;margin-top:2.5rem;color:rgba(248,245,240,.82);font-size:1.1rem}
+.impact .rule{margin-bottom:2.5rem}
+
+/* resultados */
+.results-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:end;margin-bottom:3rem}
+.results-head h2{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:300}
+.empty-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.empty-results .slot{aspect-ratio:3/4;border:1px solid rgba(179,154,112,.6);display:flex;align-items:flex-end;padding:1.2rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);background:linear-gradient(180deg,transparent,rgba(232,222,210,.5))}
+.res-note{margin-top:1.6rem;font-size:.85rem;color:var(--taupe);max-width:46rem}
+.cmp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:2rem}
+.cmp{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--champagne);touch-action:pan-y;user-select:none}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .after{clip-path:inset(0 0 0 var(--pos,50%))}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:1px;background:var(--ivory);pointer-events:none}
+.cmp .handle::after{content:"";position:absolute;top:50%;left:50%;width:2.6rem;height:2.6rem;margin:-1.3rem;border:1px solid var(--ivory);border-radius:50%;background:rgba(56,45,42,.45)}
+.cmp .tag{position:absolute;bottom:1rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory);background:rgba(41,39,37,.55);padding:.3rem .6rem}
+.cmp .tag.b{left:1rem}.cmp .tag.a{right:1rem}
+.cmp:focus-within{outline:2px solid var(--gold);outline-offset:3px}
+
+/* sobre */
+.about{background:var(--champagne)}
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,7vw,7rem);align-items:center}
+.about .ph{aspect-ratio:4/5;background:linear-gradient(155deg,var(--ivory),var(--nude) 140%)}
+.about h2{font-size:clamp(2.3rem,4.6vw,4.2rem);font-weight:300;margin:1.2rem 0 1.8rem}
+.about p.t{font-size:1.1rem;color:var(--ink-soft);max-width:34rem}
+.cred{margin-top:2rem;padding:1.2rem 0 0;border-top:1px solid var(--line);max-width:34rem;font-size:.95rem}
+.about .btn{margin-top:2.2rem}
+
+/* consultório */
+.room-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:end;margin-bottom:3rem}
+.room-head h2{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:300}
+.room-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto;gap:1.2rem}
+.room-grid .r1{grid-row:1/3;aspect-ratio:auto;min-height:30rem}
+.room-grid .r2,.room-grid .r3{aspect-ratio:5/3}
+
+/* atendimento */
+.steps-sec{background:var(--porcelain)}
+.steps-head{max-width:44rem;margin-bottom:4rem}
+.steps-head h2{font-size:clamp(2.3rem,4.6vw,4.2rem);font-weight:300}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{border-top:1px solid var(--gold);padding-top:1.4rem;counter-increment:s}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:2.4rem;color:var(--gold);display:block;line-height:1;margin-bottom:1rem}
+.steps h3{font-size:1.7rem;margin-bottom:.7rem}
+.steps p{color:var(--ink-soft);max-width:20rem}
+.steps-cta{margin-top:3.5rem}
+
+/* depoimentos */
+.quote{max-width:52rem}
+.quote blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.8rem);line-height:1.25;font-weight:300;font-style:italic}
+.quote cite{display:block;margin-top:1.4rem;font-style:normal;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+.quote-ctrl{display:flex;gap:.8rem;margin-top:2rem}
+.quote-ctrl button{width:3rem;height:3rem;border:1px solid var(--line);background:none;cursor:pointer;color:var(--brown);font-size:1.1rem}
+.quote-ctrl button:hover{border-color:var(--gold)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem)}
+.faq-grid h2{font-size:clamp(2.3rem,4.4vw,4rem);font-weight:300}
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;text-align:left;background:none;border:0;cursor:pointer;padding:1.4rem 0;min-height:3.5rem;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.6rem);color:var(--ink)}
+.acc-q .pm{flex:none;width:1.1rem;height:1.1rem;position:relative}
+.acc-q .pm::before,.acc-q .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);transition:transform .4s var(--ease)}
+.acc-q .pm::after{transform:rotate(90deg)}
+.acc-q[aria-expanded="true"] .pm::after{transform:rotate(0)}
+.acc-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.acc-a>div{overflow:hidden}
+.acc-a.open{grid-template-rows:1fr}
+.acc-a p{padding:0 2.6rem 1.5rem 0;color:var(--ink-soft);max-width:38rem}
+.acc-a a{color:var(--brown);text-decoration-color:var(--gold);text-underline-offset:3px}
+
+/* contato */
+.contact{background:var(--champagne)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.contact h2{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:300;margin:1rem 0 1.6rem}
+.cinfo{display:grid;gap:1.6rem;margin-top:2.2rem}
+.cinfo dt{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-bottom:.3rem}
+.cinfo dd{margin:0;font-family:var(--sans);font-size:1.15rem;font-weight:500;line-height:1.45;font-variant-numeric:tabular-nums}
+.cinfo dd small{display:block;font-family:var(--sans);font-size:.85rem;font-weight:400;color:var(--ink-soft);margin-top:.2rem}
+.c-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem}
+.copy{margin-left:.8rem;font:500 .64rem var(--sans);letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid var(--taupe);color:var(--brown);padding:.3rem .6rem;cursor:pointer;vertical-align:middle}
+.copy:hover{border-color:var(--gold)}
+.map-card{aspect-ratio:4/5;background:linear-gradient(160deg,var(--ivory),var(--nude) 140%);border:1px solid rgba(179,154,112,.6);padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.map-card .pin{font-family:var(--sans);font-weight:500;font-size:1.35rem;line-height:1.4}
+.map-card .pin small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin-bottom:1rem}
+.social{display:flex;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
+
+/* rodapé */
+footer{background:var(--graphite);color:var(--ivory);padding-block:clamp(3.5rem,7vw,6rem) calc(2rem + env(safe-area-inset-bottom,0px))}
+.foot-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr);gap:3rem}
+.foot-sig b{font-family:var(--serif);font-weight:500;font-size:1.6rem;letter-spacing:.14em;text-transform:uppercase;display:block}
+.foot-sig small{display:block;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:.5rem 0 1.5rem}
+.foot-sig p{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--nude);max-width:20rem;line-height:1.3}
+footer h4{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 1.1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+footer a{text-decoration:none;color:rgba(248,245,240,.85)}
+footer a:hover{color:var(--gold)}
+footer address{font-style:normal;color:rgba(248,245,240,.85);line-height:1.7}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-top:3.5rem;padding-top:1.6rem;border-top:1px solid rgba(248,245,240,.14);font-size:.8rem;color:rgba(248,245,240,.6)}
+.foot-bottom button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;padding:.3rem 0}
+.privacy{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.privacy>div{overflow:hidden}
+.privacy.open{grid-template-rows:1fr}
+.privacy-inner{padding-top:1.8rem;max-width:44rem;font-size:.9rem;color:rgba(248,245,240,.75);display:grid;gap:.8rem}
+.privacy-inner h4{margin:0}
+
+/* whatsapp flutuante */
+.wa-float{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:45;display:none;align-items:center;gap:.5rem;min-height:3rem;padding:.7rem 1.1rem;background:var(--brown);color:var(--ivory);text-decoration:none;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s var(--ease)}
+.wa-float.show{opacity:1;transform:none}
+
+/* revelação ao rolar (só elementos fora da primeira dobra) */
+.pre{opacity:0;transform:translateY(22px)}
+.pre.in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1s var(--ease)}
+
+/* responsivo */
+@media (max-width:62rem){
+  .nav a.nl,.nav .btn{display:none}
+  .burger{display:block}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-photo{order:-1;min-height:0;aspect-ratio:4/4.4;margin-top:0}
+  .hero-text{padding:2.2rem var(--gutter) 4.5rem}
+  .scroll-ind{display:none}
+  .philo,.about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .philo .ph-b{margin-top:-3rem}
+  .treat-head,.results-head,.room-head{grid-template-columns:1fr;gap:1.4rem}
+  .treat,.treat:nth-of-type(even){grid-template-columns:1fr;gap:1.6rem}
+  .treat:nth-of-type(even) .t-img{order:0}
+  .t-num{font-size:4rem}
+  .steps{grid-template-columns:1fr;gap:2rem}
+  .room-grid{grid-template-columns:1fr}
+  .room-grid .r1{grid-row:auto;min-height:0;aspect-ratio:4/3.4}
+  .foot-grid{grid-template-columns:1fr;gap:2.4rem}
+  .wa-float{display:inline-flex}
+  .map-card{aspect-ratio:auto;min-height:15rem;gap:2rem}
+}
+@media (max-width:36rem){
+  .empty-results{grid-template-columns:1fr 1fr}
+  .empty-results .slot:nth-child(3){display:none}
+  .hero-cta .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .pre{opacity:1;transform:none}
+}
+[hidden]{display:none!important}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BeautySalon","name":"Roseane Mendonça Estética Avançada","description":"Estética avançada em Três Pontas, MG: harmonização facial, estética corporal, rejuvenescimento e tricologia.","telephone":"+55 16 98200-9899","address":{"@type":"PostalAddress","streetAddress":"Rua Ouro Preto, 24, Ouro Verde","addressLocality":"Três Pontas","addressRegion":"MG","postalCode":"37191-130","addressCountry":"BR"},"founder":{"@type":"Person","name":"Roseane Ferreira Mendonça Freitas"}}
+</script>
+
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="sig" href="#inicio" aria-label="Roseane Mendonça, estética avançada. Ir para o início">
+      <b>Roseane Mendonça</b><small>Estética Avançada</small>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a class="nl" href="#inicio">Início</a>
+      <a class="nl" href="#sobre">Sobre</a>
+      <a class="nl" href="#tratamentos">Tratamentos</a>
+      <a class="nl" href="#consultorio">Consultório</a>
+      <a class="nl" href="#contato">Contato</a>
+      <a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Agendar avaliação</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu" aria-label="Menu" role="dialog" aria-modal="false">
+  <a class="ml" href="#inicio">Início</a>
+  <a class="ml" href="#sobre">Sobre</a>
+  <a class="ml" href="#tratamentos">Tratamentos</a>
+  <a class="ml" href="#consultorio">Consultório</a>
+  <a class="ml" href="#contato">Contato</a>
+  <a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Agendar avaliação</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero-wrap" id="inicio" aria-labelledby="h-hero">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Estética avançada &bull; Três Pontas, MG</p>
+      <h1 id="h-hero">Beleza que respeita a sua <em>essência.</em></h1>
+      <p class="lead">Cuidado personalizado, ciência e sensibilidade em tratamentos que valorizam a sua individualidade e respeitam a sua beleza natural.</p>
+      <div class="hero-cta">
+        <a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Agendar uma avaliação <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <a class="btn ghost" href="#sobre">Conheça meu trabalho</a>
+      </div>
+      <p class="hero-sign">Seu cuidado começa com uma conversa.</p>
+    </div>
+    <div class="hero-photo">
+      <figure class="ph empty" style="margin:0" data-slot="hero" data-label="Retrato profissional de Roseane" data-alt="Roseane Mendonça, profissional de estética avançada, de jaleco branco" data-w="1362" data-h="2560" data-pos="50% 20%"></figure>
+    </div>
+  </div>
+  <a class="scroll-ind" href="#filosofia" aria-label="Rolar para a próxima seção"><i></i>Role</a>
+</section>
+
+<!-- FILOSOFIA -->
+<section class="sec" id="filosofia" aria-labelledby="h-philo">
+  <div class="wrap philo">
+    <div class="pre">
+      <figure class="ph empty" style="margin:0" data-slot="philosophy" data-label="Fotografia editorial" data-alt="Roseane acolhendo uma paciente durante a avaliação" data-w="901" data-h="1280" data-pos="50% 30%"></figure>
+      <figure class="ph empty ph-b" style="margin-bottom:0" data-slot="philosophy2" data-label="Detalhe" data-alt="Roseane ouvindo uma paciente em atendimento no consultório" data-w="514" data-h="514" data-pos="50% 30%"></figure>
+    </div>
+    <div class="pre">
+      <p class="eyebrow gold">Filosofia de cuidado</p>
+      <h2 id="h-philo" style="margin-top:1.2rem">Cada rosto tem sua história. Cada cuidado deve respeitá-la.</h2>
+      <div class="body">
+        <p class="lead">A estética vai além da aparência. É sobre compreender necessidades individuais, respeitar características naturais e construir, junto com cada paciente, uma jornada de cuidado consciente e personalizado.</p>
+        <p class="lead">Minha abordagem valoriza a escuta, a atenção aos detalhes e o planejamento responsável, respeitando a individualidade de cada pessoa.</p>
+        <hr class="rule">
+        <p class="signature">Roseane Mendonça</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section class="sec" id="tratamentos" aria-labelledby="h-treat" style="padding-top:0">
+  <div class="wrap">
+    <div class="treat-head pre">
+      <h2 id="h-treat">Cuidado pensado para você.</h2>
+      <p class="lead">Conheça as áreas de atendimento e descubra como uma avaliação individualizada pode ajudar a compreender as possibilidades de cuidado para suas necessidades.</p>
+    </div>
+
+    <article class="treat zoom pre">
+      <div class="t-img"><figure class="ph empty" style="margin:0" data-slot="t1" data-label="Harmonização facial · imagem ilustrativa" data-alt="Imagem ilustrativa de harmonização facial" data-w="1280" data-h="880"></figure></div>
+      <div class="t-body">
+        <span class="t-num" aria-hidden="true">01</span>
+        <h3>Harmonização facial</h3>
+        <p>Planejamento individualizado para valorizar a harmonia facial, respeitando as características e proporções naturais de cada pessoa.</p>
+        <div class="t-more" id="more1"><div><p>Cada caso é avaliado individualmente. Converse para entender se esse cuidado faz sentido para você.</p></div></div>
+        <div class="t-actions">
+          <button class="link" data-more="more1" aria-expanded="false" aria-controls="more1">Conheça as possibilidades</button>
+          <a class="btn ghost" data-wa="Olá, Roseane! Gostaria de saber mais sobre os atendimentos de harmonização facial." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="treat zoom pre">
+      <div class="t-img"><figure class="ph empty" style="margin:0" data-slot="t2" data-label="Estética corporal · imagem ilustrativa" data-alt="Imagem ilustrativa de estética corporal" data-w="1000" data-h="850"></figure></div>
+      <div class="t-body">
+        <span class="t-num" aria-hidden="true">02</span>
+        <h3>Estética corporal</h3>
+        <p>Cuidados personalizados de acordo com as necessidades individuais e os objetivos definidos durante a avaliação.</p>
+        <div class="t-more" id="more2"><div><p>Cada caso é avaliado individualmente. Converse para entender se esse cuidado faz sentido para você.</p></div></div>
+        <div class="t-actions">
+          <button class="link" data-more="more2" aria-expanded="false" aria-controls="more2">Conheça as possibilidades</button>
+          <a class="btn ghost" data-wa="Olá, Roseane! Gostaria de obter informações sobre os tratamentos de estética corporal." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="treat zoom pre">
+      <div class="t-img"><figure class="ph empty" style="margin:0" data-slot="t3" data-label="Rejuvenescimento · imagem ilustrativa" data-alt="Imagem ilustrativa de cuidado com a pele" data-w="1280" data-h="880"></figure></div>
+      <div class="t-body">
+        <span class="t-num" aria-hidden="true">03</span>
+        <h3>Rejuvenescimento</h3>
+        <p>Abordagens voltadas ao cuidado da pele e à valorização de uma aparência natural.</p>
+        <div class="t-more" id="more3"><div><p>Cada caso é avaliado individualmente. Converse para entender se esse cuidado faz sentido para você.</p></div></div>
+        <div class="t-actions">
+          <button class="link" data-more="more3" aria-expanded="false" aria-controls="more3">Conheça as possibilidades</button>
+          <a class="btn ghost" data-wa="Olá, Roseane! Gostaria de conhecer as opções de tratamento voltadas ao rejuvenescimento." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="treat zoom pre" style="border-bottom:1px solid var(--line)">
+      <div class="t-img"><figure class="ph empty" style="margin:0" data-slot="t4" data-label="Tricologia · imagem ilustrativa" data-alt="Imagem ilustrativa de cuidado capilar" data-w="1000" data-h="850"></figure></div>
+      <div class="t-body">
+        <span class="t-num" aria-hidden="true">04</span>
+        <h3>Tricologia</h3>
+        <p>Atenção às necessidades do couro cabeludo e dos cabelos, com avaliação individualizada.</p>
+        <div class="t-more" id="more4"><div><p>Cada caso é avaliado individualmente. Converse para entender se esse cuidado faz sentido para você.</p></div></div>
+        <div class="t-actions">
+          <button class="link" data-more="more4" aria-expanded="false" aria-controls="more4">Conheça as possibilidades</button>
+          <a class="btn ghost" data-wa="Olá, Roseane! Gostaria de obter informações sobre avaliação capilar e tricologia." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    <p class="disclaimer">As imagens desta seção são ilustrativas e não representam resultados de pacientes. A indicação de qualquer procedimento depende de avaliação profissional individual.</p>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="impact" aria-labelledby="h-impact">
+  <figure class="ph empty" style="margin:0" data-slot="impact" data-label="" data-alt="" data-w="1920" data-h="1080"></figure>
+  <div class="wrap">
+    <hr class="rule pre">
+    <h2 id="h-impact" class="pre">Não é sobre mudar quem você é. É sobre <em>cuidar de você.</em></h2>
+    <p class="pre">Um bom planejamento estético começa com escuta, avaliação e respeito à individualidade. O objetivo é construir uma experiência de cuidado que faça sentido para você.</p>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="sec" id="resultados" aria-labelledby="h-res" hidden>
+  <div class="wrap">
+    <div class="results-head pre">
+      <h2 id="h-res">Cada jornada é única.</h2>
+      <p class="lead">Conheça registros de atendimentos e acompanhe diferentes experiências de cuidado, sempre respeitando a individualidade de cada pessoa.</p>
+    </div>
+    <div id="results-live" class="cmp-grid" hidden></div>
+    <div id="results-empty" class="pre">
+      <div class="empty-results" aria-hidden="true">
+        <div class="slot">Registro autorizado</div><div class="slot">Registro autorizado</div><div class="slot">Registro autorizado</div>
+      </div>
+      <p class="res-note">Esta área receberá registros reais de atendimentos, publicados somente com autorização de cada pessoa e sem alterações digitais. Os resultados variam de pessoa para pessoa e não há garantia de que serão os mesmos para outros casos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sec about" id="sobre" aria-labelledby="h-about">
+  <div class="wrap about-grid">
+    <figure class="ph empty pre" style="margin:0" data-slot="about" data-label="Retrato de Roseane" data-alt="Retrato de Roseane Mendonça" data-w="1362" data-h="2560" data-pos="50% 18%"></figure>
+    <div class="pre">
+      <p class="eyebrow gold">Sobre</p>
+      <h2 id="h-about">Cuidado que começa em ouvir você.</h2>
+      <p class="t">Sou Roseane Mendonça e acredito que cada atendimento deve começar pela escuta, pelo acolhimento e pela compreensão das necessidades individuais. Meu propósito é oferecer uma experiência de cuidado estético responsável, personalizada e alinhada à valorização da beleza natural.</p>
+      <div class="cred" id="cred" hidden></div>
+      <a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Entre em contato <span class="arr" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTÓRIO -->
+<section class="sec" id="consultorio" aria-labelledby="h-room">
+  <div class="wrap">
+    <div class="room-head pre">
+      <h2 id="h-room">Um espaço pensado para você.</h2>
+      <p class="lead">Um ambiente acolhedor, com atenção aos detalhes e uma experiência dedicada ao seu cuidado.</p>
+    </div>
+    <div class="room-grid zoom pre">
+      <figure class="ph empty r1" style="margin:0" data-slot="room1" data-label="Consultório · imagem principal" data-alt="Sala de atendimento com maca, luminária com lupa e painel ripado iluminado" data-w="960" data-h="1280" data-pos="50% 60%"></figure>
+      <figure class="ph empty r2" style="margin:0" data-slot="room2" data-label="Consultório · detalhe" data-alt="Estante iluminada com porta-retratos e certificados emoldurados" data-w="960" data-h="576"></figure>
+      <figure class="ph empty r3" style="margin:0" data-slot="room3" data-label="Consultório · detalhe" data-alt="Mesa de mármore e cadeira do consultório" data-w="960" data-h="576"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ATENDIMENTO -->
+<section class="sec steps-sec" id="atendimento" aria-labelledby="h-steps">
+  <div class="wrap">
+    <div class="steps-head pre">
+      <h2 id="h-steps">Seu próximo passo começa com uma conversa.</h2>
+    </div>
+    <ol class="steps pre">
+      <li><h3>Entre em contato</h3><p>Conte o que você procura e esclareça suas dúvidas iniciais.</p></li>
+      <li><h3>Agende sua avaliação</h3><p>Consulte a disponibilidade e encontre um horário adequado.</p></li>
+      <li><h3>Conheça as possibilidades</h3><p>Receba orientações individualizadas sobre as opções de cuidado pertinentes ao seu caso.</p></li>
+    </ol>
+    <div class="steps-cta pre"><a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp <span class="arr" aria-hidden="true">&rarr;</span></a></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS (oculta até haver depoimentos reais) -->
+<section class="sec" id="depoimentos" aria-labelledby="h-dep" hidden>
+  <div class="wrap">
+    <p class="eyebrow gold">Depoimentos</p>
+    <h2 id="h-dep" style="font-size:clamp(2.2rem,4.4vw,3.8rem);font-weight:300;margin:1rem 0 3rem;max-width:22ch">A experiência de quem escolheu cuidar de si.</h2>
+    <div class="quote" aria-live="polite"><blockquote id="q-text"></blockquote><cite id="q-by"></cite></div>
+    <div class="quote-ctrl" id="q-ctrl"><button type="button" id="q-prev" aria-label="Depoimento anterior">&larr;</button><button type="button" id="q-next" aria-label="Próximo depoimento">&rarr;</button></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" aria-labelledby="h-faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="pre"><p class="eyebrow gold">Perguntas frequentes</p><h2 id="h-faq" style="margin-top:1rem">Antes de começar.</h2></div>
+    <div class="acc pre" id="acc">
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a1" id="q1">Como posso agendar uma avaliação?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a1" role="region" aria-labelledby="q1"><div><p>Pelo WhatsApp, no número +55 16 98200-9899. Conte o que você procura e combine um horário diretamente com Roseane. <a data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Abrir conversa</a>.</p></div></div></div>
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a2" id="q2">Onde fica o consultório?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a2" role="region" aria-labelledby="q2"><div><p>Rua Ouro Preto, nº 24, Bairro Ouro Verde, Três Pontas, MG, CEP 37191-130. Na seção de contato há um botão para abrir o trajeto no aplicativo de mapas.</p></div></div></div>
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a3" id="q3">Como saber qual tratamento é adequado para mim?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a3" role="region" aria-labelledby="q3"><div><p>A indicação depende de uma avaliação individual. Na conversa e na avaliação, suas necessidades e seus objetivos são ouvidos antes de qualquer orientação sobre as possibilidades de cuidado.</p></div></div></div>
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a4" id="q4">Os procedimentos exigem avaliação prévia?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a4" role="region" aria-labelledby="q4"><div><p>O atendimento começa com avaliação individualizada. Para confirmar como funciona no seu caso, fale com Roseane pelo WhatsApp.</p></div></div></div>
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a5" id="q5">Como posso consultar os valores?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a5" role="region" aria-labelledby="q5"><div><p>Os valores dependem do que for indicado na avaliação, por isso são informados diretamente no atendimento. Pergunte pelo <a data-wa="Olá, Roseane! Gostaria de consultar valores e condições de atendimento." href="https://wa.me/5516982009899" target="_blank" rel="noopener">WhatsApp</a>.</p></div></div></div>
+      <div class="acc-item"><h3><button class="acc-q" aria-expanded="false" aria-controls="a6" id="q6">Quais são os horários de atendimento?<span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-a" id="a6" role="region" aria-labelledby="q6"><div><p>O horário informado é das 09h às 20h. Os dias de atendimento e a disponibilidade para a sua data são confirmados pelo WhatsApp.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec contact" id="contato" aria-labelledby="h-contact">
+  <div class="wrap contact-grid">
+    <div class="pre">
+      <p class="eyebrow gold">Contato e localização</p>
+      <h2 id="h-contact">Vamos conversar?</h2>
+      <p class="lead">Conte o que você procura. A resposta e a disponibilidade são combinadas diretamente pelo WhatsApp.</p>
+      <dl class="cinfo">
+        <div><dt>WhatsApp</dt><dd><span id="phone">+55 16 98200-9899</span><button class="copy" type="button" id="copy-phone">Copiar</button></dd></div>
+        <div><dt>Endereço</dt><dd>Rua Ouro Preto, 24<small>Bairro Ouro Verde, Três Pontas, MG &bull; CEP 37191-130</small></dd></div>
+        <div><dt>Horário informado</dt><dd>09h às 20h<small>Dias de atendimento: confirme pelo WhatsApp.</small></dd></div>
+      </dl>
+      <div class="c-actions">
+        <a class="btn" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">Conversar pelo WhatsApp <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Rua%20Ouro%20Preto%2C%2024%2C%20Ouro%20Verde%2C%20Tr%C3%AAs%20Pontas%20-%20MG%2C%2037191-130" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+      <div class="social" id="social" hidden></div>
+    </div>
+    <div class="map-card pre">
+      <div class="pin"><small>Consultório</small>Rua Ouro Preto, 24<br>Ouro Verde</div>
+      <div>
+        <p style="color:var(--ink-soft);margin-bottom:1.2rem">Três Pontas, Minas Gerais</p>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&query=Rua%20Ouro%20Preto%2C%2024%2C%20Ouro%20Verde%2C%20Tr%C3%AAs%20Pontas%20-%20MG%2C%2037191-130" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="link" style="margin-left:1.4rem" href="https://waze.com/ul?q=Rua%20Ouro%20Preto%2024%20Ouro%20Verde%20Tr%C3%AAs%20Pontas%20MG&navigate=yes" target="_blank" rel="noopener">Abrir no Waze</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-sig"><b>Roseane Mendonça</b><small>Estética Avançada</small><p>Cuidado, ciência e naturalidade em cada detalhe.</p></div>
+      <nav aria-label="Rodapé"><h4>Navegação</h4>
+        <ul><li><a href="#inicio">Início</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#tratamentos">Tratamentos</a></li><li><a href="#consultorio">Consultório</a></li><li><a href="#faq">Perguntas frequentes</a></li><li><a href="#contato">Contato</a></li></ul>
+      </nav>
+      <div><h4>Contato</h4>
+        <address>Rua Ouro Preto, 24, Ouro Verde<br>Três Pontas, MG &bull; 37191-130<br>
+        <a data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener">WhatsApp +55 16 98200-9899</a></address>
+        <div class="social" id="social-foot" hidden></div>
+      </div>
+    </div>
+    <div class="privacy" id="privacy"><div>
+      <div class="privacy-inner">
+        <h4>Política de privacidade</h4>
+        <p>Esta página não possui formulários, não coleta dados pessoais e não exibe anúncios. Ao tocar nos botões de contato, você é levado ao WhatsApp, e a conversa passa a seguir as regras de privacidade do próprio aplicativo.</p>
+        <p>Dúvidas sobre o uso das informações que você enviar por mensagem podem ser feitas diretamente a Roseane pelo WhatsApp.</p>
+      </div>
+    </div></div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Roseane Ferreira Mendonça Freitas. Estética avançada.</span>
+      <button type="button" id="priv-btn" aria-expanded="false" aria-controls="privacy">Política de privacidade</button>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" data-wa="Olá, Roseane! Conheci seu site e gostaria de obter informações sobre seus atendimentos." href="https://wa.me/5516982009899" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">WhatsApp</a>
+
+<script>
+/* ====== CONFIGURAÇÃO: preencha aqui com materiais reais e confirmados ====== */
+var CONFIG = {
+  whatsapp: '5516982009899',
+  /* URLs ou data URIs das fotografias reais. Vazio = espaço preparado. */
+  photos: { hero:'img/roseane-2x.webp', philosophy:'img/atendimento-escuta.webp', philosophy2:'img/atendimento-detalhe.webp', t1:'', t2:'', t3:'', t4:'', impact:'', about:'img/roseane-2x.webp', room1:'img/sala-atendimento.webp', room2:'img/consultorio-detalhe-1.webp', room3:'img/consultorio-detalhe-2.webp' },
+  /* Casos reais autorizados: { before:'url', after:'url', alt:'descrição', note:'aviso opcional' } */
+  results: [],
+  /* Depoimentos reais e autorizados: { text:'...', by:'Nome autorizado' } */
+  testimonials: [],
+  /* Links oficiais confirmados */
+  social: { instagram:'', facebook:'' },
+  /* Formação, habilitação e experiência verificadas (texto). */
+  credentials: ''
+};
+
+(function(){
+  var doc = document, root = doc.documentElement;
+  function $(s, c){ return (c||doc).querySelector(s); }
+  function $$(s, c){ return Array.prototype.slice.call((c||doc).querySelectorAll(s)); }
+
+  /* WhatsApp com mensagem pré-preenchida */
+  $$('[data-wa]').forEach(function(a){
+    a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(a.getAttribute('data-wa'));
+  });
+
+  /* fotografias */
+  $$('[data-slot]').forEach(function(f){
+    var src = CONFIG.photos[f.getAttribute('data-slot')];
+    if(!src){ return; }
+    var img = new Image();
+    img.src = src;
+    img.alt = f.getAttribute('data-alt') || '';
+    img.width = +f.getAttribute('data-w') || 1200;
+    img.height = +f.getAttribute('data-h') || 800;
+    img.decoding = 'async';
+    if(f.getAttribute('data-slot') !== 'hero'){ img.loading = 'lazy'; }
+    var pos = f.getAttribute('data-pos'); if(pos){ img.style.objectPosition = pos; }
+    f.appendChild(img); f.classList.remove('empty');
+  });
+  /* ilustrações originais (criadas em código) para os tratamentos sem fotografia */
+  function wrap(vb, inner){
+    return '<svg viewBox="0 0 '+vb+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" style="position:absolute;inset:0;width:100%;height:100%;display:block">'+inner+'</svg>';
+  }
+  var G = 'stroke="var(--gold)"', B = 'stroke="var(--brown)"', T = 'stroke="var(--taupe)"', N = 'fill="none" stroke-linecap="round"';
+  var ART = {
+    t1: { vb:'800 550', cap:'Ilustração · proporção e equilíbrio', fn:function(){
+      return '<g '+N+'>'
+      + '<circle cx="400" cy="275" r="255" '+G+' stroke-width="1" opacity=".55"/>'
+      + '<circle cx="400" cy="275" r="205" '+G+' stroke-width="1" opacity=".3"/>'
+      + '<ellipse cx="400" cy="275" rx="118" ry="168" '+B+' stroke-width="1.6" opacity=".85"/>'
+      + '<path d="M400 60V490" '+G+' stroke-width="1" stroke-dasharray="3 7"/>'
+      + '<path d="M240 219H560M240 331H560" '+G+' stroke-width="1" stroke-dasharray="3 7"/>'
+      + '<path d="M336 236Q358 222 380 236Q358 246 336 236ZM420 236Q442 222 464 236Q442 246 420 236Z" '+B+' stroke-width="1.5" opacity=".85"/>'
+      + '<path d="M330 212Q356 198 382 208M418 208Q444 198 470 212" '+B+' stroke-width="1.5" opacity=".7"/>'
+      + '<path d="M400 244L394 306Q400 314 406 306" '+B+' stroke-width="1.4" opacity=".7"/>'
+      + '<path d="M372 372Q387 363 400 369Q413 363 428 372Q414 390 400 390Q386 390 372 372Z" '+B+' stroke-width="1.5" opacity=".85"/>'
+      + '</g><g fill="var(--gold)"><circle cx="400" cy="219" r="3.5"/><circle cx="400" cy="331" r="3.5"/><circle cx="400" cy="107" r="3.5"/><circle cx="400" cy="443" r="3.5"/></g>';
+    }},
+    t2: { vb:'800 680', cap:'Ilustração · linhas e movimento', fn:function(){
+      var s = '<g '+N+'>';
+      for(var i=0;i<9;i++){
+        var c = (i===4) ? G : T, o = (i===4) ? 1 : (.18 + .05*Math.min(i, 8-i));
+        s += '<path d="M330 30C450 170 250 300 345 430C415 520 305 600 365 670" '+c+' stroke-width="'+(i===4?1.6:1.1)+'" opacity="'+o.toFixed(2)+'" transform="translate('+(i*24-40)+' 0)"/>';
+      }
+      s += '<circle cx="610" cy="150" r="70" '+G+' stroke-width="1" opacity=".5"/></g>';
+      return s;
+    }},
+    t3: { vb:'800 550', cap:'Ilustração · pele e luminosidade', fn:function(){
+      var s = '<g '+N+'>';
+      for(var i=0;i<8;i++){
+        s += '<ellipse cx="400" cy="345" rx="'+(55+i*44)+'" ry="'+((55+i*44)*.27).toFixed(1)+'" '+(i%3===0?G:T)+' stroke-width="1" opacity="'+(.7-i*.07).toFixed(2)+'"/>';
+      }
+      s += '<path d="M400 120C400 120 366 168 366 196A34 34 0 0 0 434 196C434 168 400 120 400 120Z" '+B+' stroke-width="1.6" opacity=".85"/>'
+        + '<circle cx="400" cy="345" r="5" fill="var(--gold)" stroke="none"/></g>';
+      return s;
+    }},
+    t4: { vb:'800 680', cap:'Ilustração · fios e cuidado', fn:function(){
+      var s = '<g '+N+'>';
+      for(var i=0;i<28;i++){
+        var x = 30 + i*27, dx = Math.sin(i*.7)*55, hl = (i%9===4);
+        s += '<path d="M'+x+' -20C'+(x+100+dx).toFixed(0)+' 170 '+(x-120-dx).toFixed(0)+' 360 '+(x+30)+' 720" '+(hl?G:T)+' stroke-width="'+(hl?1.6:1.1)+'" opacity="'+(hl?1:(.2+.15*Math.abs(Math.sin(i))).toFixed(2))+'"/>';
+      }
+      return s + '</g>';
+    }}
+  };
+  Object.keys(ART).forEach(function(k){
+    var f = doc.querySelector('[data-slot="'+k+'"]');
+    if(!f || CONFIG.photos[k]){ return; }
+    f.insertAdjacentHTML('afterbegin', wrap(ART[k].vb, ART[k].fn()));
+    f.classList.remove('empty'); f.classList.add('art');
+    f.setAttribute('data-cap', ART[k].cap);
+    f.setAttribute('role','img');
+    f.setAttribute('aria-label', f.getAttribute('data-alt') || ART[k].cap);
+  });
+
+  $$('.ph.empty').forEach(function(f){
+    f.setAttribute('role','img');
+    f.setAttribute('aria-label', 'Espaço reservado: ' + (f.getAttribute('data-label')||'fotografia'));
+  });
+
+  /* cabeçalho */
+  var header = $('#top');
+  function onScroll(){
+    header.classList.toggle('solid', window.scrollY > 24);
+    var wa = $('#wa-float'); if(wa){ wa.classList.toggle('show', window.scrollY > 500); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* menu mobile */
+  var burger = $('#burger');
+  function setMenu(open){
+    root.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    doc.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!root.classList.contains('menu-open')); });
+  $$('#mmenu a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  doc.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ setMenu(false); } });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 992){ setMenu(false); } });
+
+  /* tratamentos: "Conheça as possibilidades" */
+  $$('[data-more]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var box = doc.getElementById(b.getAttribute('data-more'));
+      var open = !box.classList.contains('open');
+      box.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* FAQ */
+  $$('.acc-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var panel = doc.getElementById(q.getAttribute('aria-controls'));
+      var open = q.getAttribute('aria-expanded') !== 'true';
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.classList.toggle('open', open);
+    });
+  });
+
+  /* privacidade */
+  var pb = $('#priv-btn'), pv = $('#privacy');
+  pb.addEventListener('click', function(){
+    var open = !pv.classList.contains('open');
+    pv.classList.toggle('open', open);
+    pb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open){ setTimeout(function(){ pv.scrollIntoView({behavior:'smooth', block:'center'}); }, 120); }
+  });
+
+  /* copiar telefone */
+  var cp = $('#copy-phone');
+  cp.addEventListener('click', function(){
+    var txt = '+55 16 98200-9899';
+    function ok(){ cp.textContent = 'Copiado'; setTimeout(function(){ cp.textContent = 'Copiar'; }, 1800); }
+    function fallback(){
+      var r = doc.createRange(); r.selectNodeContents($('#phone'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      cp.textContent = 'Selecionado'; setTimeout(function(){ cp.textContent = 'Copiar'; }, 1800);
+    }
+    try{ navigator.clipboard.writeText(txt).then(ok, fallback); }catch(e){ fallback(); }
+  });
+
+  /* resultados reais: comparador */
+  if(CONFIG.results && CONFIG.results.length){
+    var live = $('#results-live');
+    CONFIG.results.forEach(function(r, i){
+      var fig = doc.createElement('figure'); fig.style.margin = '0';
+      fig.innerHTML = '<div class="cmp" style="--pos:50%"><img src="'+r.before+'" alt="Antes: '+(r.alt||'')+'" loading="lazy" width="800" height="1000"><img class="after" src="'+r.after+'" alt="Depois: '+(r.alt||'')+'" loading="lazy" width="800" height="1000"><span class="tag b">Antes</span><span class="tag a">Depois</span><div class="handle"></div><input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois, caso '+(i+1)+'"></div><figcaption style="font-size:.82rem;color:var(--taupe);margin-top:.8rem">'+(r.note||'Registro autorizado. Resultados variam de pessoa para pessoa.')+'</figcaption>';
+      var box = $('.cmp', fig), rng = $('input', fig);
+      rng.addEventListener('input', function(){ box.style.setProperty('--pos', rng.value + '%'); });
+      live.appendChild(fig);
+    });
+    live.hidden = false; $('#results-empty').hidden = true; $('#resultados').hidden = false;
+  }
+
+  /* credenciais verificadas */
+  if(CONFIG.credentials){ var c = $('#cred'); c.textContent = CONFIG.credentials; c.hidden = false; }
+
+  /* redes sociais confirmadas */
+  function social(target){
+    var html = '';
+    if(CONFIG.social.instagram){ html += '<a class="btn ghost'+(target.id==='social-foot'?'-light':'')+'" href="'+CONFIG.social.instagram+'" target="_blank" rel="noopener">Instagram</a>'; }
+    if(CONFIG.social.facebook){ html += '<a class="btn ghost'+(target.id==='social-foot'?'-light':'')+'" href="'+CONFIG.social.facebook+'" target="_blank" rel="noopener">Facebook</a>'; }
+    if(html){ target.innerHTML = html; target.hidden = false; }
+  }
+  social($('#social')); social($('#social-foot'));
+
+  /* depoimentos reais */
+  var T = CONFIG.testimonials || [];
+  if(T.length){
+    var ti = 0, sec = $('#depoimentos');
+    function showQ(){ $('#q-text').textContent = '“' + T[ti].text + '”'; $('#q-by').textContent = T[ti].by || ''; }
+    $('#q-prev').addEventListener('click', function(){ ti = (ti - 1 + T.length) % T.length; showQ(); });
+    $('#q-next').addEventListener('click', function(){ ti = (ti + 1) % T.length; showQ(); });
+    if(T.length < 2){ $('#q-ctrl').hidden = true; }
+    showQ(); sec.hidden = false;
+  }
+
+  /* ano */
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* revelação ao rolar: só o que está abaixo da primeira dobra começa oculto */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = $$('.pre');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var vh = window.innerHeight || 800;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){
+      if(el.getBoundingClientRect().top < vh){ el.classList.add('in'); }
+      else { io.observe(el); }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
